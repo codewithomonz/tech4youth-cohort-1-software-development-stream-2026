@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Web Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin-bottom: 15px;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+        }
+
+        nav a:focus {
+            outline: 2px solid #fff;
+            background-color: #1abc9c;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 10px;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        article p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        aside {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-left: 4px solid #1abc9c;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        aside h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer a:focus {
+            outline: 2px solid #fff;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Semantic header element with site title -->
+    <header>
+        <h1>Web Development Essentials</h1>
+        <p>Learning HTML, CSS, and Accessibility for Everyone</p>
+    </header>
+
+    <!-- Semantic navigation element with links -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#learning">Learning Path</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Semantic main element containing primary content -->
+    <main>
+
+        <!-- Section 1: Introduction -->
+        <section id="home">
+            <h2>Welcome to Web Development</h2>
+            <article>
+                <p>
+                    Welcome to your journey into web development! In this course, you'll learn the
+                    fundamental technologies that power the modern web. Whether you're building
+                    your first website or preparing for a career in tech, understanding HTML, CSS,
+                    and accessibility is essential.
+                </p>
+                <p>
+                    The web is built on three core technologies: HTML for structure, CSS for style,
+                    and JavaScript for interactivity. But before diving into complex frameworks and
+                    tools, mastering the foundations is crucial. This course focuses on semantic HTML
+                    and modern CSS, ensuring your websites are not just beautiful, but accessible to
+                    everyone.
+                </p>
+                <img src="https://via.placeholder.com/600x400?text=Web+Development"
+                    alt="Person working on a laptop displaying HTML code">
+                <p>
+                    By the end of this course, you'll have built multiple projects, practiced
+                    accessibility testing, and understood the principles of inclusive design.
+                    Let's get started!
+                </p>
+            </article>
+        </section>
+
+        <!-- Section 2: Learning Path -->
+        <section id="learning">
+            <h2>Your Learning Path</h2>
+            <article>
+                <h3>What We'll Cover</h3>
+                <p>
+                    This course is organized into two main topics, each with three lessons:
+                </p>
+                <ul>
+                    <li><strong>Topic 01: Software Development Fundamentals</strong> — Understand roles, SDLC, and Agile
+                    </li>
+                    <li><strong>Topic 02: Web Development Essentials</strong> — Build semantic HTML, style with CSS,
+                        ensure accessibility</li>
+                </ul>
+                <p>
+                    Each lesson includes theory, hands-on practice, and real-world examples.
+                    You'll build projects that demonstrate your learning and can be added to your portfolio.
+                </p>
+
+                <h3>Learning Objectives</h3>
+                <ul>
+                    <li>Explain and use semantic HTML elements correctly</li>
+                    <li>Structure web pages with landmarks and logical heading hierarchies</li>
+                    <li>Write accessible forms, images, links, and tables</li>
+                    <li>Style pages with modern CSS (Flexbox, Grid, Media Queries)</li>
+                    <li>Ensure WCAG AA accessibility compliance</li>
+                    <li>Test your work with browser tools and screen readers</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Section 3: Skills -->
+        <section id="skills">
+            <h2>Skills You'll Master</h2>
+            <article>
+                <h3>HTML Skills</h3>
+                <ul>
+                    <li>Semantic markup with landmark elements</li>
+                    <li>Proper heading hierarchy (h1–h6)</li>
+                    <li>Accessible links with meaningful text</li>
+                    <li>Images with descriptive alt text</li>
+                    <li>Accessible forms with labels</li>
+                    <li>Semantic tables with headers</li>
+                    <li>Lists, paragraphs, and content grouping</li>
+                </ul>
+
+                <h3>CSS Skills</h3>
+                <ul>
+                    <li>CSS selectors and specificity</li>
+                    <li>The box model (margin, padding, border)</li>
+                    <li>Flexbox for flexible 1D layouts</li>
+                    <li>CSS Grid for 2D layouts</li>
+                    <li>Responsive design with media queries</li>
+                    <li>Mobile-first approach</li>
+                    <li>Color contrast and typography for accessibility</li>
+                    <li>Animations and transitions</li>
+                </ul>
+
+                <h3>Accessibility Skills</h3>
+                <ul>
+                    <li>WCAG 2.1 Level AA guidelines</li>
+                    <li>Keyboard navigation testing</li>
+                    <li>Screen reader testing (NVDA, VoiceOver)</li>
+                    <li>Automated accessibility tools (Lighthouse, axe)</li>
+                    <li>Color contrast verification</li>
+                    <li>Inclusive design thinking</li>
+                    <li>Legal compliance awareness</li>
+                </ul>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- Semantic aside element for supplementary content -->
+    <aside>
+        <h3>Quick Tips for Success</h3>
+        <ul>
+            <li><strong>Practice regularly:</strong> Build something every day, even if small</li>
+            <li><strong>Test on real devices:</strong> Don't just test in your desktop browser</li>
+            <li><strong>Use DevTools:</strong> Right-click → Inspect becomes your best friend</li>
+            <li><strong>Read error messages:</strong> They're usually telling you exactly what's wrong</li>
+            <li><strong>Ask questions:</strong> There's no such thing as a "dumb" question</li>
+            <li><strong>Accessibility first:</strong> Build inclusive from day one, not as an afterthought</li>
+            <li><strong>Reference the docs:</strong> MDN Web Docs is your trusted resource</li>
+        </ul>
+    </aside>
+
+    <!-- Semantic footer element -->
+    <footer>
+        <nav>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="copyright">
+            <p>&copy; 2026 Web Development Course. All rights reserved.</p>
+            <p>Built with semantic HTML, accessible CSS, and inclusive design principles.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
