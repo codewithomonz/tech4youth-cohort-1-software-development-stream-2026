@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling with CSS - Completed</title>
+    <style>
+        /* ===== CSS Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ===== Global Styles ===== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        /* ===== Header & Navigation ===== */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-bottom: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        nav {
+            display: flex;
+            background-color: #34495e;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        nav a {
+            flex: 1;
+            min-width: 120px;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+            border-bottom-color: #16a085;
+        }
+
+        nav a:focus {
+            outline: 2px solid white;
+            background-color: #1abc9c;
+        }
+
+        /* ===== Main Content ===== */
+        main {
+            max-width: 950px;
+            margin: 40px auto 0;
+            padding: 0 20px 40px;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #1abc9c;
+        }
+
+        section h3 {
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            color: #34495e;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        section p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* ===== Lists ===== */
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        li strong {
+            color: #2c3e50;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        footer a:focus {
+            outline: 2px solid white;
+            border-radius: 3px;
+        }
+
+        /* ===== Responsive Design - Tablet (600px and up) ===== */
+        @media (min-width: 600px) {
+            section {
+                padding: 35px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            nav a {
+                flex: 0 1 auto;
+                min-width: auto;
+            }
+        }
+
+        /* ===== Responsive Design - Tablet (768px and up) ===== */
+        @media (min-width: 768px) {
+            header {
+                padding: 40px 30px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            main {
+                max-width: 900px;
+                padding: 0 30px 40px;
+            }
+
+            section {
+                padding: 40px;
+                margin-bottom: 35px;
+            }
+
+            section h3 {
+                margin-top: 25px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 0;
+            }
+
+            nav a {
+                padding: 15px 25px;
+            }
+        }
+
+        /* ===== Responsive Design - Desktop (1200px and up) ===== */
+        @media (min-width: 1200px) {
+            body {
+                font-size: 16px;
+            }
+
+            header {
+                padding: 50px 40px;
+            }
+
+            header h1 {
+                font-size: 2.8em;
+            }
+
+            main {
+                max-width: 1100px;
+                padding: 0 40px 50px;
+            }
+
+            section {
+                padding: 45px 50px;
+                margin-bottom: 40px;
+            }
+
+            section h2 {
+                font-size: 2.2em;
+                margin-bottom: 25px;
+                padding-bottom: 20px;
+            }
+
+            nav a {
+                padding: 15px 30px;
+            }
+
+            footer {
+                padding: 40px 30px;
+            }
+        }
+
+        /* ===== Accessibility Considerations ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== Print Styles ===== */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            nav,
+            footer {
+                display: none;
+            }
+
+            section {
+                box-shadow: none;
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Styling Workshop</h1>
+        <p>Learn to style HTML with modern CSS techniques</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#grid">Grid</a>
+        <a href="#responsive">Responsive</a>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h2>Welcome to CSS Styling</h2>
+            <p>
+                CSS (Cascading Style Sheets) is what makes websites look beautiful.
+                In this lesson, you'll learn how to style HTML elements, create layouts,
+                and make your site responsive on all devices.
+            </p>
+            <p>
+                You'll practice with real examples and build a portfolio-ready project
+                by the end of this lesson. This completed file demonstrates professional
+                CSS practices including responsive design, accessibility, and modern layout techniques.
+            </p>
+        </section>
+
+        <section id="flexbox">
+            <h2>Flexbox Layout</h2>
+            <p>
+                Flexbox is a powerful tool for creating 1D layouts (either rows or columns).
+                It's perfect for navigation bars, card layouts, and flexible sizing. In this project,
+                we use flexbox to create a responsive navigation that adapts to different screen sizes.
+            </p>
+            <h3>Key Flexbox Properties:</h3>
+            <ul>
+                <li><strong>display: flex</strong> — makes a container a flex container</li>
+                <li><strong>flex-direction: row | column</strong> — sets layout direction (default is row)</li>
+                <li><strong>justify-content</strong> — aligns items along the main axis (flex-start, center,
+                    space-between, etc.)</li>
+                <li><strong>align-items</strong> — aligns items along the cross axis (center, stretch, etc.)</li>
+                <li><strong>flex-wrap</strong> — allows items to wrap to the next line (default is nowrap)</li>
+                <li><strong>gap</strong> — adds space between items (modern CSS, replaces margin tricks)</li>
+                <li><strong>flex</strong> — shorthand for flex-grow, flex-shrink, and flex-basis</li>
+            </ul>
+            <h3>Real Example in This Project:</h3>
+            <p>
+                The navigation bar uses <code>display: flex</code> with responsive behavior. On mobile,
+                links stack and take up space evenly. On tablet and up, they align left with fixed widths.
+            </p>
+        </section>
+
+        <section id="grid">
+            <h2>CSS Grid Layout</h2>
+            <p>
+                CSS Grid is perfect for 2D layouts where you need to control both rows and columns.
+                It's ideal for page layouts, gallery grids, and complex designs. While this project uses
+                Flexbox for the main layout, Grid is incredibly useful for more complex structures.
+            </p>
+            <h3>Key Grid Properties:</h3>
+            <ul>
+                <li><strong>display: grid</strong> — makes a container a grid container</li>
+                <li><strong>grid-template-columns</strong> — defines column widths (e.g., 1fr 1fr for two equal columns)
+                </li>
+                <li><strong>grid-template-rows</strong> — defines row heights</li>
+                <li><strong>gap</strong> — adds space between grid cells</li>
+                <li><strong>grid-column</strong> — spans an item across multiple columns</li>
+                <li><strong>grid-row</strong> — spans an item across multiple rows</li>
+                <li><strong>auto-fit / auto-fill</strong> — creates responsive grids without media queries</li>
+            </ul>
+            <h3>When to Use Grid vs. Flexbox:</h3>
+            <ul>
+                <li><strong>Flexbox:</strong> One-dimensional layouts (rows or columns), navigation, flexible sizing
+                </li>
+                <li><strong>Grid:</strong> Two-dimensional layouts (rows and columns), page layouts, complex designs
+                </li>
+                <li><strong>Pro tip:</strong> Use them together! Flexbox inside grid items for ultimate flexibility</li>
+            </ul>
+        </section>
+
+        <section id="responsive">
+            <h2>Responsive Design</h2>
+            <p>
+                Responsive design ensures your site looks good on phones, tablets, and desktops.
+                Modern web design uses media queries and mobile-first thinking. This project uses
+                mobile-first approach with three breakpoints: base (mobile), 768px (tablet), and 1200px (desktop).
+            </p>
+            <h3>Mobile-First Approach:</h3>
+            <ul>
+                <li><strong>Write base styles for mobile first</strong> — no media query needed</li>
+                <li><strong>Add media queries for larger screens</strong> — layer complexity as screen grows</li>
+                <li><strong>Common breakpoints:</strong> 768px (tablet), 1200px (desktop)</li>
+                <li><strong>Test on actual devices</strong> — don't just rely on browser resizing</li>
+                <li><strong>Use relative units</strong> — em, rem, %, and viewport units instead of fixed pixels</li>
+                <li><strong>Touch targets</strong> — buttons and links should be ≥48px on mobile</li>
+            </ul>
+            <h3>Media Query Syntax:</h3>
+            <ul>
+                <li><code>@media (min-width: 768px) { /* tablet and up */ }</code></li>
+                <li><code>@media (max-width: 767px) { /* mobile only */ }</code></li>
+                <li><code>@media (min-width: 768px) and (max-width: 1199px) { /* tablet only */ }</code></li>
+                <li><code>@media (orientation: landscape) { /* landscape mode */ }</code></li>
+                <li><code>@media (prefers-reduced-motion: reduce) { /* respects accessibility preference */ }</code>
+                </li>
+            </ul>
+            <h3>Responsive Image Technique:</h3>
+            <p>
+                To make images responsive, use: <code>img { max-width: 100%; height: auto; }</code>
+                This ensures images scale down on smaller screens while maintaining aspect ratio.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CSS Styling Workshop. All rights reserved.</p>
+        <p>
+            <a href="#privacy">Privacy Policy</a> |
+            <a href="#terms">Terms of Service</a> |
+            <a href="#contact">Contact Us</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+            This project demonstrates modern CSS practices including Flexbox, media queries,
+            and accessibility features.
+        </p>
+    </footer>
+
+</body>
+
+</html>
+
+<!-- 
+==============================================
+LESSON SUMMARY: T02-L2 COMPLETED
+==============================================
+
+This completed file demonstrates professional CSS practices:
+
+✓ CSS RESET
+  - Removes default browser margins/padding
+  - Uses box-sizing: border-box for predictable sizing
+
+✓ FLEXIBLE LAYOUTS
+  - Uses Flexbox for responsive navigation
+  - Adapts to mobile, tablet, and desktop screens
+
+✓ RESPONSIVE DESIGN (Mobile-First)
+  - Base styles for mobile (no breakpoint)
+  - Media query at 600px (tablet small)
+  - Media query at 768px (tablet)
+  - Media query at 1200px (desktop)
+
+✓ VISUAL HIERARCHY
+  - Clear typography with font sizes and weights
+  - Color contrasts that meet WCAG AA standards
+  - Proper spacing and padding
+
+✓ INTERACTIVE ELEMENTS
+  - Hover states on links and navigation
+  - Focus states for keyboard navigation (outline visible)
+  - Smooth transitions for better UX
+
+✓ ACCESSIBILITY IN CSS
+  - Focus indicators visible (outline: 2px solid)
+  - Sufficient line height (1.6-1.8)
+  - Text is readable with good contrast
+  - Respects prefers-reduced-motion preference
+  - Print styles for paper output
+
+✓ MODERN CSS FEATURES
+  - CSS animations (@keyframes fadeIn)
+  - CSS variables (not used here, but CSS custom properties are great!)
+  - Media query syntax
+  - Pseudo-classes (:hover, :focus, :first-of-type, :last-of-type)
+
+==============================================
+KEY CSS CONCEPTS DEMONSTRATED
+==============================================
+
+1. Flexbox Navigation:
+   nav {
+       display: flex;
+       gap: 20px;
+       flex-wrap: wrap;
+   }
+   
+   Makes navigation responsive and properly spaced
+
+2. Box Model in Action:
+   section {
+       margin-bottom: 30px;  /* space outside (bottom)
+       padding: 30px;        /* space inside
+       border-bottom: 3px solid #1abc9c;  /* accent line
+   }
+
+3. Media Query Structure:
+   @media (min-width: 768px) {
+       /* Tablet styles override base mobile styles */
+       section {
+           padding: 40px;  /* More room on larger screens
+       }
+   }
+
+4. Focus State for Accessibility:
+   a:focus {
+       outline: 2px solid blue;  /* Always visible
+       background-color: #1abc9c;
+   }
+   This is ESSENTIAL for keyboard navigation
+
+5. Responsive Images:
+   img {
+       max-width: 100%;
+       height: auto;
+   }
+   Scales with container without distortion
+
+==============================================
+RESPONSIVE BREAKPOINTS USED
+==============================================
+
+Mobile (default, no query):
+  - Base styles for phones
+  - 320px to 599px typically
+
+Tablet (600px):
+  - Slight adjustments for medium screens
+  - Navigation flex behavior changes
+
+Tablet (768px):
+  - Major breakpoint for tablet-sized devices
+  - More padding, larger fonts
+  - Layout adjustments
+
+Desktop (1200px):
+  - Full-width experiences
+  - Increased padding and spacing
+  - Optimized for large screens
+
+All breakpoints use min-width (mobile-first approach)
+
+==============================================
+ACCESSIBILITY FEATURES IN CSS
+==============================================
+
+1. Focus States:
+   a:focus {
+       outline: 2px solid white;
+   }
+   Visible outline for keyboard navigation
+
+2. Line Height:
+   body {
+       line-height: 1.6;  /* Minimum 1.5 for accessibility
+   }
+   Makes text easier to read
+
+3. Color Contrast:
+   All text meets WCAG AA (4.5:1 for body text)
+   - Dark text (#2c3e50 or #333) on light backgrounds
+   - Light text (white) on dark backgrounds (#2c3e50)
+
+4. Prefers Reduced Motion:
+   @media (prefers-reduced-motion: reduce) {
+       * {
+           animation-duration: 0.01ms;
+       }
+   }
+   Respects users who get dizzy from animations
+
+5. Touch Targets:
+   nav a {
+       padding: 12px 20px;  /* At least 44-48px tall
+   }
+   Large enough for mobile touch users
+
+==============================================
+ANIMATION IN CSS
+==============================================
+
+This project uses smooth animations:
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section {
+    animation: fadeIn 0.4s ease;
+}
+
+Result: Sections smoothly fade in and slide up when page loads
+
+Be aware: Some users prefer reduced motion (accessibility feature)
+That's why we included: @media (prefers-reduced-motion: reduce)
+
+==============================================
+COMPARISON: STARTER vs COMPLETED
+==============================================
+
+Starter file had:
+❌ Empty CSS (all TODOs)
+❌ No styling
+❌ No responsive design
+
+Completed file adds:
+✅ Professional color scheme (#2c3e50, #34495e, #1abc9c)
+✅ Flexbox layout for navigation
+✅ Typography hierarchy
+✅ Three responsive breakpoints
+✅ Hover and focus states
+✅ Box shadows for depth
+✅ Animation effects
+✅ Accessibility features (focus outlines, contrast, reduced motion)
+✅ Print styles
+
+==============================================
+BEST PRACTICES SHOWN HERE
+==============================================
+
+1. Organization:
+   - Reset at top
+   - Global styles
+   - Component styles
+   - Media queries at bottom
+
+2. Mobile-First:
+   - Base styles for mobile
+   - Add complexity with breakpoints
+
+3. Accessibility:
+   - Visible focus states
+   - Good contrast
+   - Readable text
+   - Respects preferences
+
+4. Reusability:
+   - Use classes for styling (if added)
+   - Avoid overly specific selectors
+   - DRY (Don't Repeat Yourself) principle
+
+5. Maintainability:
+   - Comments explain sections
+   - Organized property order
+   - Consistent naming
+   - Semantic class names (if used)
+
+==============================================
+HOW TO USE DEVTOOLS TO INSPECT
+==============================================
+
+1. Right-click on page → Inspect
+2. Look at Elements tab to see HTML structure
+3. Look at Styles panel to see which CSS applies
+4. Hover over properties to see box model visualization
+5. Toggle media query in Responsive Design Mode (F12 → Ctrl+Shift+M)
+6. Use Accessibility inspector to check color contrast
+
+==============================================
+NEXT STEPS
+==============================================
+
+1. Compare Starter file with this Completed file
+2. Identify each CSS rule and what it does
+3. Test responsive behavior by resizing browser
+4. Use DevTools Inspect to understand CSS cascade
+5. Move to T02-L3 for Accessibility (WCAG)
+
+==============================================
+BONUS CHALLENGE
+==============================================
+
+Try these enhancements:
+
+1. Add CSS Grid to create a card layout
+2. Use CSS custom properties (variables) for colors
+3. Create a dark mode with media query (prefers-color-scheme)
+4. Add smooth scroll behavior (scroll-behavior: smooth)
+5. Create a hamburger menu for mobile (requires JavaScript)
+6. Use CSS transforms for hover effects (transform: scale())
+
+==============================================
+RESOURCES
+==============================================
+
+- MDN: CSS Documentation
+  https://developer.mozilla.org/en-US/docs/Web/CSS
+
+- CSS Tricks: Flexbox Guide
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+- CSS Tricks: Grid Guide  
+  https://css-tricks.com/snippets/css/complete-guide-grid/
+
+- WebAIM: Color Contrast Checker
+  https://webaim.org/resources/contrastchecker/
+
+- A11y: Web Accessibility Checklist
+  https://www.a11y-101.com/checklist
+
+Questions? Review the lecture guide or ask in class!
+-->

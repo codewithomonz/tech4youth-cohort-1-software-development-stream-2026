@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accessibility Basics - Starter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #003;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin-right: 20px;
+            color: #00f;
+        }
+
+        main {
+            max-width: 800px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #003;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #00f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #003;
+            color: #fff;
+            padding: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TODO: Fix accessibility issues in this file -->
+    <!-- Hint: Look for missing labels, poor contrast, images without alt text, etc. -->
+
+    <header>
+        <!-- TODO: Consider adding a skip link here for keyboard navigation -->
+        <h1>Web Accessibility & Inclusive Design</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#wcag">WCAG</a>
+        <a href="#testing">Testing</a>
+        <a href="#resources">Resources</a>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h2>What is Web Accessibility?</h2>
+            <p>
+                Web accessibility means making websites usable by everyone, including people
+                with disabilities. This includes people who are blind, deaf, colorblind, or have
+                motor disabilities.
+            </p>
+            <!-- TODO: Add alt text to image -->
+            <img src="https://via.placeholder.com/600x300">
+            <p>
+                Accessibility isn't just about people with disabilities. It benefits everyone:
+                captions help in loud environments, large text helps in bright sunlight, and
+                keyboard shortcuts help busy professionals.
+            </p>
+        </section>
+
+        <section id="wcag">
+            <h2>WCAG 2.1 Guidelines</h2>
+            <p>
+                The Web Content Accessibility Guidelines (WCAG) are the international standard
+                for web accessibility. They're organized into four principles: POUR.
+            </p>
+
+            <!-- TODO: Fix color contrast issue (light red text on white is hard to read) -->
+            <p style="color: #f99; font-size: 14px;">
+                <strong>P</strong>erceptible - Information must be perceivable<br>
+                <strong>O</strong>perable - Interface must be operable via keyboard<br>
+                <strong>U</strong>nderstandable - Content must be understandable<br>
+                <strong>R</strong>obust - Content must work with assistive technologies
+            </p>
+
+            <p>WCAG has three levels: A (minimum), AA (standard), and AAA (enhanced).</p>
+        </section>
+
+        <section id="testing">
+            <h2>Accessibility Testing</h2>
+            <p>Testing your site is essential. Here's a form you can fill out:</p>
+
+            <form>
+                <!-- TODO: Add labels to all form inputs -->
+                <!-- Hint: Use <label for="fieldId"> and <input id="fieldId"> -->
+                <div class="form-group">
+                    Name:
+                    <input type="text">
+                </div>
+
+                <div class="form-group">
+                    Email:
+                    <input type="email">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox"> I want to learn more about accessibility
+                </div>
+
+                <!-- TODO: Add focus states to button (visible outline) -->
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="resources">
+            <h2>Resources</h2>
+
+            <!-- TODO: Fix heading hierarchy (h3 should come after h2, not skipping) -->
+            <h4>Key Tools</h4>
+            <!-- TODO: Fix link text (avoid "click here") -->
+            <ul>
+                <li><a href="https://www.deque.com/axe/devtools/">click here</a> for axe DevTools</li>
+                <li><a href="https://webaim.org/resources/contrastchecker/">Click here</a> for color contrast checker
+                </li>
+                <li><a href="https://www.w3.org/WAI/test-evaluate/">check this</a> for WCAG evaluation</li>
+            </ul>
+
+            <!-- TODO: Add keyboard shortcuts or improve usability -->
+            <h4>Screen Readers</h4>
+            <ul>
+                <li>NVDA (Windows) - Free</li>
+                <li>JAWS (Windows) - Paid</li>
+                <li>VoiceOver (Mac/iOS) - Built-in</li>
+                <li>TalkBack (Android) - Built-in</li>
+            </ul>
+
+            <!-- TODO: Fix list without semantic <ul><li> tags -->
+            <h4>Common Issues</h4>
+            Keyboard inaccessible buttons<br>
+            Missing alt text on images<br>
+            Poor color contrast<br>
+            Forms without labels<br>
+            No focus indicators<br>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Accessibility Workshop. All rights reserved.</p>
+        <!-- TODO: Make footer links keyboard accessible (visible focus state) -->
+        <a href="#privacy">Privacy</a> | <a href="#terms">Terms</a>
+    </footer>
+
+</body>
+
+</html>
+
+<!-- 
+==============================================
+LESSON OBJECTIVES - Fix all TODO items
+==============================================
+
+By completing this activity, you will:
+
+✓ Add skip links for keyboard navigation
+✓ Ensure sufficient color contrast (WCAG AA)
+✓ Write descriptive alt text for images
+✓ Associate labels with form inputs
+✓ Add visible focus states for keyboard navigation
+✓ Fix heading hierarchy (no skipping levels)
+✓ Write meaningful link text
+✓ Use semantic HTML for lists
+✓ Understand the WCAG POUR principles
+✓ Know how to test for accessibility
+
+==============================================
+ACCESSIBILITY ISSUES TO FIX
+==============================================
+
+1. Missing skip link at top of page
+   → Add: <a href="#main">Skip to main content</a>
+   → Style: position: absolute; top: -40px; left: 0;
+   → On :focus: top: 0; (becomes visible)
+
+2. Poor color contrast (#f99 red on white)
+   → Use darker red (#c00 or #8b0000) for sufficient contrast
+
+3. Missing image alt text
+   → Add: alt="Description of what's in the image"
+
+4. Form inputs without labels
+   → Add: <label for="name">Name:</label>
+   → Connect with: <input id="name" type="text">
+
+5. Heading hierarchy issue (h4 should be h3)
+   → Use h3 when following an h2
+   → Never skip heading levels
+
+6. Weak link text ("click here", "check this")
+   → Use: "Read axe DevTools documentation"
+   → Links should make sense out of context
+
+7. Semantic list issue (Common Issues has no <ul><li>)
+   → Wrap in: <ul><li>item</li></ul>
+
+8. No focus state on button
+   → Add: button:focus { outline: 2px solid; }
+
+9. Footer links need focus state
+   → Add: footer a:focus { outline: 2px solid #000; }
+
+==============================================
+WCAG QUICK REFERENCE
+==============================================
+
+Perceivable (Can users see/hear your content?)
+  □ All images have alt text
+  □ Videos have captions
+  □ Text has sufficient contrast (4.5:1)
+
+Operable (Can users use keyboard to navigate?)
+  □ All interactive elements accessible via Tab
+  □ Focus indicators visible
+  □ No keyboard traps
+  □ Forms can be filled and submitted with keyboard
+
+Understandable (Do users understand your content?)
+  □ Language is clear and simple
+  □ Instructions are clear
+  □ Links make sense out of context
+  □ Headings create logical outline
+
+Robust (Does content work with assistive tech?)
+  □ Valid HTML
+  □ Semantic elements used correctly
+  □ Form labels properly associated
+  □ ARIA used where needed
+
+==============================================
+TESTING CHECKLIST
+==============================================
+
+Manual Testing:
+□ Press Tab through entire page
+□ All interactive elements reached and functional
+□ Focus indicator always visible
+□ Logical tab order (left-to-right, top-to-bottom)
+
+Color Contrast:
+□ All text meets 4.5:1 ratio (WCAG AA)
+□ Use: https://webaim.org/resources/contrastchecker/
+
+Images:
+□ All images have descriptive alt text
+□ Decorative images have empty alt="" 
+□ Alt text doesn't say "image" (that's implied)
+
+Forms:
+□ Every input has associated <label>
+□ Error messages clearly identify problems
+□ Required fields marked
+
+Links:
+□ Link text describes destination
+□ No "click here" or "read more"
+
+Headings:
+□ Exactly one h1
+□ Proper hierarchy (1→2→3, no skips)
+□ Headings describe content
+
+Automated Tools:
+□ Run Lighthouse audit (target: 90+)
+□ Use axe DevTools to check for issues
+□ Use WAVE browser extension
+
+==============================================
+SKIP LINK EXAMPLE
+==============================================
+
+In HTML:
+<header>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    <nav>...</nav>
+</header>
+
+In CSS:
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+}
+
+.skip-link:focus {
+    top: 0;  /* Becomes visible on focus */
+}
+
+Why: Helps keyboard users skip navigation and jump to main content
+
+==============================================
+FORM ACCESSIBILITY EXAMPLE
+==============================================
+
+BAD (inaccessible):
+<div>Name:</div>
+<input type="text">
+
+GOOD (accessible):
+<label for="name">Name:</label>
+<input id="name" type="text" required>
+
+BETTER (includes hint):
+<label for="email">Email (required):</label>
+<input id="email" type="email" required 
+       aria-describedby="email-hint">
+<small id="email-hint">We'll never share your email</small>
+
+==============================================
+NEXT STEPS
+==============================================
+
+1. Open this Starter file
+2. Use Lighthouse to audit accessibility
+3. Note the issues found
+4. Fix each TODO comment in the HTML
+5. Compare with T02-L3-Completed.html
+6. Test with keyboard navigation
+7. Test with a screen reader if possible
+8. Run Lighthouse again to verify fixes
+
+==============================================
+BONUS CHALLENGES
+==============================================
+
+Try these if you finish early:
+
+1. Add ARIA landmarks:
+   <header role="banner">
+   <main role="main">
+   <footer role="contentinfo">
+
+2. Add ARIA labels:
+   <button aria-label="Close navigation menu">×</button>
+
+3. Test with NVDA screen reader (Windows)
+
+4. Add language to code samples:
+   <code lang="html"></code>
+
+5. Create an accessibility statement:
+   "This site aims to meet WCAG 2.1 Level AA standards"
+
+==============================================
+RESOURCES
+==============================================
+
+- WCAG 2.1 Quick Reference
+  https://www.w3.org/WAI/WCAG21/quickref/
+
+- WebAIM Color Contrast Checker
+  https://webaim.org/resources/contrastchecker/
+
+- deque axe DevTools
+  https://www.deque.com/axe/devtools/
+
+- NVDA Screen Reader (free, Windows)
+  https://www.nvaccess.org/
+
+- A11y Checklist
+  https://www.a11y-101.com/checklist
+
+Questions? Review the lecture guide or ask in class!
+-->

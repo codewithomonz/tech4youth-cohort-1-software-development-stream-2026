@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling with CSS - Starter</title>
+    <style>
+        /* 
+        TODO: Add CSS reset
+        - Remove default margins and padding from all elements
+        - Use box-sizing: border-box for all elements
+        */
+
+        /* 
+        TODO: Style body element
+        - Font family (sans-serif recommended)
+        - Line height (≥1.5 for accessibility)
+        - Color (text color)
+        - Background color
+        */
+
+        /* 
+        TODO: Style header
+        - Background color
+        - Padding and margin
+        - Text color (should have good contrast)
+        */
+
+        /* 
+        TODO: Style header h1
+        - Font size
+        - Margin bottom
+        */
+
+        /* 
+        TODO: Style nav
+        - Display (hint: use flex or inline-block)
+        - Alignment
+        */
+
+        /* 
+        TODO: Style nav links (a)
+        - Padding
+        - Text decoration (remove underline)
+        - Color
+        - Hover state (change background or text color)
+        - Focus state (outline for accessibility)
+        */
+
+        /* 
+        TODO: Style main
+        - Max width (for readability, limit line length)
+        - Margin: auto (centers on page)
+        - Padding (for mobile)
+        */
+
+        /* 
+        TODO: Style section
+        - Background color (white is good contrast against body)
+        - Margin bottom
+        - Padding
+        - Border radius (rounded corners)
+        - Box shadow (subtle shadow for depth)
+        */
+
+        /* 
+        TODO: Style section h2
+        - Color
+        - Font size
+        - Margin and padding
+        - Border bottom (optional: add a bottom border as accent)
+        */
+
+        /* 
+        TODO: Style ul (unordered lists)
+        - Margin left (for indentation)
+        - Margin bottom
+        */
+
+        /* 
+        TODO: Style li
+        - Margin bottom (space between items)
+        */
+
+        /* 
+        TODO: Style footer
+        - Background color (match header for consistency)
+        - Color (text color)
+        - Padding
+        - Margin top
+        - Text align (center)
+        */
+
+        /* 
+        TODO: Style footer links
+        - Color
+        - Text decoration (remove underline)
+        - Hover state
+        - Focus state
+        */
+
+        /* 
+        BONUS SECTION: If you finish early, add these!
+        
+        TODO: Create a responsive layout with media queries
+        - At breakpoint 768px: Add styles for tablet
+        - At breakpoint 1200px: Add styles for desktop
+        
+        TODO: Style images
+        - Max width: 100%
+        - Height: auto (maintains aspect ratio)
+        - Border radius
+        
+        TODO: Create a card component (if page has cards)
+        - Padding
+        - Background
+        - Border radius
+        - Box shadow
+        
+        TODO: Add hover effects
+        - Use transition property for smooth animations
+        - Example: transition: all 0.3s ease;
+        */
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CSS Styling Workshop</h1>
+        <p>Learn to style HTML with modern CSS techniques</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#grid">Grid</a>
+        <a href="#responsive">Responsive</a>
+    </nav>
+
+    <main>
+
+        <section id="home">
+            <h2>Welcome to CSS Styling</h2>
+            <p>
+                CSS (Cascading Style Sheets) is what makes websites look beautiful.
+                In this lesson, you'll learn how to style HTML elements, create layouts,
+                and make your site responsive on all devices.
+            </p>
+            <p>
+                You'll practice with real examples and build a portfolio-ready project
+                by the end of this lesson.
+            </p>
+        </section>
+
+        <section id="flexbox">
+            <h2>Flexbox Layout</h2>
+            <p>
+                Flexbox is a powerful tool for creating 1D layouts (either rows or columns).
+                It's perfect for navigation bars, card layouts, and flexible sizing.
+            </p>
+            <h3>Key Flexbox Properties:</h3>
+            <ul>
+                <li>display: flex — makes a container a flex container</li>
+                <li>flex-direction: row | column — sets layout direction</li>
+                <li>justify-content — aligns items along main axis</li>
+                <li>align-items — aligns items along cross axis</li>
+                <li>flex-wrap — allows items to wrap to next line</li>
+                <li>gap — adds space between items</li>
+            </ul>
+        </section>
+
+        <section id="grid">
+            <h2>CSS Grid Layout</h2>
+            <p>
+                CSS Grid is perfect for 2D layouts where you need rows AND columns.
+                It's ideal for page layouts, gallery grids, and complex designs.
+            </p>
+            <h3>Key Grid Properties:</h3>
+            <ul>
+                <li>display: grid — makes a container a grid container</li>
+                <li>grid-template-columns — defines column widths</li>
+                <li>grid-template-rows — defines row heights</li>
+                <li>gap — adds space between grid cells</li>
+                <li>grid-column — spans multiple columns</li>
+                <li>grid-row — spans multiple rows</li>
+            </ul>
+        </section>
+
+        <section id="responsive">
+            <h2>Responsive Design</h2>
+            <p>
+                Responsive design ensures your site looks good on phones, tablets, and desktops.
+                Modern web design uses media queries and mobile-first thinking.
+            </p>
+            <h3>Mobile-First Approach:</h3>
+            <ul>
+                <li>Write base styles for mobile first</li>
+                <li>Add media queries for larger screens</li>
+                <li>Common breakpoints: 768px (tablet), 1200px (desktop)</li>
+                <li>Test on actual devices, not just browser resizing</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CSS Styling Workshop. All rights reserved.</p>
+        <p>
+            <a href="#privacy">Privacy</a> |
+            <a href="#terms">Terms</a> |
+            <a href="#contact">Contact</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
+
+<!-- 
+==============================================
+LESSON OBJECTIVES - Complete all TODOs above
+==============================================
+
+By completing this file, you will:
+
+✓ Apply CSS to HTML for styling and layout
+✓ Use selectors correctly (element, class, id, pseudo-classes)
+✓ Style links and buttons with hover and focus states
+✓ Understand the box model (margin, padding, border)
+✓ Use Flexbox for layout
+✓ Create responsive designs with media queries
+✓ Ensure accessibility in CSS (focus states, contrast, readable text)
+
+==============================================
+HOW TO STRUCTURE YOUR CSS
+==============================================
+
+1. CSS Reset (at the top):
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+2. Global styles (body, html):
+   body {
+       font-family: Arial, sans-serif;
+       line-height: 1.6;
+       color: #333;
+   }
+
+3. Component styles (header, nav, main, etc.)
+
+4. Responsive media queries (at the bottom):
+   @media (min-width: 768px) {
+       /* tablet and up */
+   }
+
+==============================================
+COMMON CSS PATTERNS
+==============================================
+
+Navigation with Flexbox:
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+Main content max width:
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+Hover and Focus (for accessibility!):
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid blue;
+}
+
+Responsive Images:
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+==============================================
+MOBILE-FIRST BREAKPOINTS
+==============================================
+
+Base (mobile): No media query needed
+    - Up to 599px
+
+Tablet:
+    @media (min-width: 768px) { }
+    - 600px to 1199px
+
+Desktop:
+    @media (min-width: 1200px) { }
+    - 1200px and up
+
+==============================================
+COLOR AND CONTRAST
+==============================================
+
+For good readability, text needs sufficient contrast:
+- WCAG AA: 4.5:1 for normal text (e.g., #000 on #FFF = 21:1 ✓)
+- WCAG AA: 3:1 for large text (≥18px bold or ≥24px)
+
+Test with: https://webaim.org/resources/contrastchecker/
+
+==============================================
+ACCESSIBILITY IN CSS
+==============================================
+
+Do NOT do this:
+❌ a:focus { outline: none; }
+   (Makes keyboard navigation invisible)
+
+Do this instead:
+✓ a:focus {
+      outline: 2px solid blue;
+  }
+
+Make sure:
+□ Focus states are clearly visible
+□ Text is readable (size ≥16px, contrast ≥4.5:1)
+□ Line height is ≥1.5
+□ Hover and focus have the same effect (or similar)
+
+==============================================
+FLEXBOX EXAMPLE
+==============================================
+
+For a navigation bar:
+
+nav {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #1abc9c;
+}
+
+Result: Horizontal navbar with spacing, colors, and hover effect
+
+==============================================
+NEXT STEPS
+==============================================
+
+1. Fill in each TODO comment with CSS rules
+2. Save as "styles.css" OR keep styles in <style> tag
+3. Open in browser and compare with T02-L2-Completed.html
+4. Notice the layout, colors, spacing, and responsiveness
+5. Test navigation with keyboard (Tab key)
+6. Resize browser to test responsive behavior
+7. Use browser DevTools to inspect elements
+
+==============================================
+HINTS FOR SPECIFIC SECTIONS
+==============================================
+
+Header:
+- Use a dark background (#2c3e50 or #333)
+- Contrast text should be light (white or light gray)
+- Add padding for breathing room
+
+Navigation:
+- Use display: flex for horizontal layout
+- Add gap: 15px for spacing
+- Style links with hover/focus states
+
+Main:
+- Set max-width: 900px for readability
+- Center with margin: 0 auto
+- Add padding for mobile: padding: 0 20px
+
+Sections:
+- background-color: white
+- padding: 20px to 30px
+- Add subtle box-shadow or border
+- margin-bottom: 30px
+
+Footer:
+- Match header colors for consistency
+- Use lighter opacity text if needed (opacity: 0.8)
+
+==============================================
+RESOURCES
+==============================================
+
+- MDN: CSS Basics
+  https://developer.mozilla.org/en-US/docs/Learn/CSS
+
+- CSS Tricks: Flexbox Guide
+  https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+- CSS Tricks: Grid Guide
+  https://css-tricks.com/snippets/css/complete-guide-grid/
+
+- WebAIM: Color Contrast Checker
+  https://webaim.org/resources/contrastchecker/
+
+Questions? Review the lecture guide or ask in class!
+-->

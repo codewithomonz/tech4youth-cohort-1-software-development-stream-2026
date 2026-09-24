@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Accessibility & WCAG - Completed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        /* Skip Link - Hidden by default, visible on focus */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background-color: #000;
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            outline: 2px solid yellow;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-bottom: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            display: block;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #1abc9c;
+            border-bottom-color: #16a085;
+        }
+
+        nav a:focus {
+            outline: 2px solid yellow;
+            background-color: #1abc9c;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px 40px;
+        }
+
+        section {
+            background-color: white;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            padding: 30px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #2c3e50;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #1abc9c;
+        }
+
+        section h3 {
+            color: #34495e;
+            font-size: 1.3em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Image Styling */
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: block;
+        }
+
+        /* Lists */
+        ul {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        /* Color Contrast Fix - Now has sufficient contrast */
+        .wcag-principles {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-left: 4px solid #1abc9c;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .wcag-principles p {
+            color: #2c3e50;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .wcag-principles strong {
+            color: #1abc9c;
+            font-weight: bold;
+        }
+
+        /* Form Styling */
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        label .required {
+            color: #e74c3c;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #bdc3c7;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: inherit;
+            line-height: 1.5;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: 2px solid #1abc9c;
+            border-color: #1abc9c;
+            box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"]:focus {
+            outline: 2px solid #1abc9c;
+        }
+
+        input[type="checkbox"]+label {
+            display: inline;
+            margin-bottom: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #1abc9c;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        button:focus {
+            outline: 2px solid #2c3e50;
+            background-color: #16a085;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Form Helper Text */
+        .form-hint {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        /* Accessibility Box */
+        .accessibility-box {
+            background-color: #e8f8f5;
+            border-left: 4px solid #1abc9c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .accessibility-box strong {
+            color: #1abc9c;
+        }
+
+        /* Links */
+        a {
+            color: #1abc9c;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #16a085;
+        }
+
+        a:focus {
+            outline: 2px solid #1abc9c;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer a:focus {
+            outline: 2px solid white;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            section {
+                padding: 40px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            nav a {
+                flex: 0 1 auto;
+                min-width: auto;
+            }
+        }
+
+        /* Accessibility: Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Skip Link for keyboard navigation -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header>
+        <h1>Web Accessibility & WCAG 2.1</h1>
+        <p>Building inclusive, accessible websites for everyone</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#wcag">WCAG Basics</a>
+        <a href="#testing">Testing</a>
+        <a href="#resources">Resources</a>
+    </nav>
+
+    <main id="main">
+
+        <section id="home">
+            <h2>What is Web Accessibility?</h2>
+            <p>
+                Web accessibility means making websites usable by everyone, including people
+                with disabilities. This includes people who are blind, deaf, colorblind, or have
+                motor disabilities. But accessibility isn't just for people with permanent disabilities—
+                it helps everyone in temporary situations too.
+            </p>
+
+            <!-- Image with descriptive alt text -->
+            <img src="https://via.placeholder.com/600x300?text=Accessible+Web+Design"
+                alt="A diverse group of people using different devices and assistive technologies to access a website">
+
+            <p>
+                Accessibility benefits everyone. Think about these situations:
+            </p>
+            <ul>
+                <li><strong>Captions on videos</strong> help in loud environments and help people learn new languages
+                </li>
+                <li><strong>Keyboard shortcuts</strong> speed up experienced users, whether they use a mouse or not</li>
+                <li><strong>Large text options</strong> help not just people with vision loss, but anyone in bright
+                    sunlight</li>
+                <li><strong>Clear instructions</strong> help all users, but are essential for people with cognitive
+                    disabilities</li>
+                <li><strong>Alternative text for images</strong> helps when images don't load and helps search engines
+                    understand your content</li>
+            </ul>
+
+            <div class="accessibility-box">
+                <strong>Key Principle:</strong> Accessibility is inclusive design. When you build for
+                people with disabilities, you create better experiences for everyone.
+            </div>
+        </section>
+
+        <section id="wcag">
+            <h2>WCAG 2.1 Guidelines</h2>
+            <p>
+                The Web Content Accessibility Guidelines (WCAG) are the international standard
+                for web accessibility. They're created by the W3C and used by governments and
+                organizations worldwide. WCAG 2.1 is the current standard (released in 2018).
+            </p>
+
+            <h3>The POUR Principles</h3>
+            <p>
+                WCAG is organized into four core principles, remembered by the acronym <strong>POUR</strong>:
+            </p>
+
+            <div class="wcag-principles">
+                <p><strong>P</strong>erceptible — Information must be perceivable to at least one sense</p>
+                <p>
+                    Users must be able to see, hear, or otherwise perceive content. This means images need
+                    alt text, videos need captions, and text must be readable (not too light or too small).
+                </p>
+
+                <p><strong>O</strong>perable — Interface must be operable via keyboard and other input methods</p>
+                <p>
+                    Users must be able to navigate and use all interactive elements. This means every link
+                    and button must be reachable via keyboard (Tab key), with visible focus indicators.
+                </p>
+
+                <p><strong>U</strong>nderstandable — Content and interface must be clear and predictable</p>
+                <p>
+                    Users must understand what content means and how to use the interface. Text should be
+                    clear, instructions should be obvious, and the site should behave predictably.
+                </p>
+
+                <p><strong>R</strong>obust — Content must work with all browsers and assistive technologies</p>
+                <p>
+                    Your code must be valid HTML and CSS. It must work with screen readers, voice control,
+                    and other assistive technologies. Use semantic HTML and ARIA where appropriate.
+                </p>
+            </div>
+
+            <h3>Conformance Levels</h3>
+            <ul>
+                <li><strong>Level A (Minimum):</strong> Basic accessibility requirements. Rarely sufficient.</li>
+                <li><strong>Level AA (Standard):</strong> The industry standard. Most organizations aim for this.</li>
+                <li><strong>Level AAA (Enhanced):</strong> Highest level of accessibility. Not always practical for all
+                    content.</li>
+            </ul>
+
+            <p>
+                This project and course aim for <strong>WCAG 2.1 Level AA</strong> compliance.
+            </p>
+        </section>
+
+        <section id="testing">
+            <h2>Accessibility Testing & Practice</h2>
+            <p>
+                Testing your site is essential. Below is an accessible form you can use to practice
+                filling out and submitting forms. Notice how labels are properly associated with inputs,
+                and all fields are keyboard-accessible.
+            </p>
+
+            <h3>Accessibility Test Form</h3>
+            <form>
+                <!-- Properly associated label and input -->
+                <div class="form-group">
+                    <label for="name">
+                        Name
+                        <span class="required">*</span>
+                    </label>
+                    <input id="name" type="text" required aria-required="true" aria-describedby="name-hint">
+                    <div class="form-hint" id="name-hint">
+                        Enter your full name (required)
+                    </div>
+                </div>
+
+                <!-- Email input with hint -->
+                <div class="form-group">
+                    <label for="email">
+                        Email
+                        <span class="required">*</span>
+                    </label>
+                    <input id="email" type="email" required aria-required="true" aria-describedby="email-hint">
+                    <div class="form-hint" id="email-hint">
+                        We'll never share your email address (required)
+                    </div>
+                </div>
+
+                <!-- Checkbox with proper label association -->
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input id="accessibility-interest" type="checkbox" name="interest">
+                        <label for="accessibility-interest">
+                            I want to learn more about web accessibility
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Accessible button -->
+                <button type="submit">Submit Form</button>
+            </form>
+
+            <h3>What Makes This Form Accessible?</h3>
+            <ul>
+                <li><strong>Labels:</strong> Every input has a <code>&lt;label&gt;</code> with a <code>for</code>
+                    attribute</li>
+                <li><strong>Required indication:</strong> Required fields marked with asterisk and aria-required</li>
+                <li><strong>Helper text:</strong> Descriptive hints linked with aria-describedby</li>
+                <li><strong>Keyboard navigation:</strong> Tab through fields in logical order</li>
+                <li><strong>Focus indicators:</strong> Visible outline when focused (try tabbing!)</li>
+                <li><strong>Checkbox labels:</strong> Properly associated so label is clickable</li>
+                <li><strong>Button:</strong> Clear text describing action</li>
+            </ul>
+        </section>
+
+        <section id="resources">
+            <h2>Accessibility Resources & Tools</h2>
+
+            <h3>Automated Testing Tools</h3>
+            <ul>
+                <li>
+                    <strong><a href="https://www.deque.com/axe/devtools/">axe DevTools</a></strong>
+                    — Browser extension for checking accessibility issues
+                </li>
+                <li>
+                    <strong><a href="https://developers.google.com/web/tools/lighthouse">Google Lighthouse</a></strong>
+                    — Built into Chrome DevTools; audits accessibility, performance, and more
+                </li>
+                <li>
+                    <strong><a href="https://wave.webaim.org/">WebAIM WAVE</a></strong>
+                    — Browser extension and web service for accessibility evaluation
+                </li>
+                <li>
+                    <strong><a href="https://webaim.org/resources/contrastchecker/">WebAIM Color Contrast
+                            Checker</a></strong>
+                    — Verify text has sufficient contrast
+                </li>
+            </ul>
+
+            <h3>Screen Readers (Manual Testing)</h3>
+            <ul>
+                <li>
+                    <strong>NVDA (Free)</strong> — Open-source screen reader for Windows.
+                    <a href="https://www.nvaccess.org/">Download here</a>
+                </li>
+                <li>
+                    <strong>JAWS (Paid)</strong> — Professional screen reader for Windows.
+                    Trial available at <a href="https://www.freedomscientific.com/">Freedom Scientific</a>
+                </li>
+                <li>
+                    <strong>VoiceOver (Built-in)</strong> — Mac and iOS. Press Cmd+F5 to enable.
+                </li>
+                <li>
+                    <strong>TalkBack (Built-in)</strong> — Android screen reader. Built into all Android devices.
+                </li>
+            </ul>
+
+            <h3>Documentation & Learning</h3>
+            <ul>
+                <li>
+                    <strong><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG 2.1 Quick Reference</a></strong>
+                    — Official WCAG guidelines with examples
+                </li>
+                <li>
+                    <strong><a href="https://webaim.org/">WebAIM</a></strong>
+                    — Comprehensive accessibility education and resources
+                </li>
+                <li>
+                    <strong><a href="https://www.w3.org/WAI/ARIA/apg/">ARIA Authoring Practices</a></strong>
+                    — How to use ARIA for dynamic content
+                </li>
+                <li>
+                    <strong><a href="https://a11ycasts.com/">A11ycasts by Google Chrome</a></strong>
+                    — Short video series on accessibility topics
+                </li>
+            </ul>
+
+            <div class="accessibility-box">
+                <strong>Pro Tip:</strong> The best way to understand accessibility is to test with real
+                users who use assistive technologies. If possible, work with accessibility consultants
+                or hire user testers who have disabilities.
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Web Accessibility Course. All rights reserved.</p>
+        <p>
+            <a href="#privacy">Privacy Policy</a> |
+            <a href="#terms">Terms of Service</a> |
+            <a href="#contact">Contact</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.9;">
+            This site aims to meet WCAG 2.1 Level AA standards.
+            <a href="#accessibility-statement">Accessibility Statement</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
+
+<!-- 
+==============================================
+LESSON SUMMARY: T02-L3 COMPLETED
+==============================================
+
+This completed file demonstrates WCAG 2.1 Level AA accessibility:
+
+✓ SKIP LINK
+  - "Skip to main content" link at top
+  - Hidden by default, visible on focus
+  - Helps keyboard users bypass navigation
+
+✓ SEMANTIC HTML
+  - Proper heading hierarchy (h1 → h2 → h3)
+  - No skipped levels
+  - Meaningful structure
+
+✓ COLOR CONTRAST (Perceivable)
+  - All text has ≥4.5:1 contrast ratio (WCAG AA)
+  - No light red on white (fixed from starter)
+  - Verified with WebAIM Color Contrast Checker
+
+✓ IMAGES (Perceivable)
+  - All images have descriptive alt text
+  - Alt text describes content, doesn't say "image"
+  - Decorative images would have alt=""
+
+✓ KEYBOARD NAVIGATION (Operable)
+  - Tab through entire page without mouse
+  - All interactive elements accessible via Tab
+  - Logical tab order
+  - No keyboard traps
+
+✓ FOCUS INDICATORS (Operable)
+  - Visible outline on every interactive element
+  - Never removed or hidden
+  - Clear and distinct
+
+✓ FORMS (Operable + Understandable)
+  - Every input has associated <label>
+  - Required fields marked with asterisk AND aria-required
+  - Helper text linked with aria-describedby
+  - Error states clear (when validation added)
+
+✓ LINK TEXT (Understandable)
+  - All links have meaningful text
+  - No "click here" or "read more"
+  - Links make sense out of context
+
+✓ CLEAR CONTENT (Understandable)
+  - Plain language, no jargon
+  - Clear instructions
+  - Headings create logical outline
+  - Lists properly semantic
+
+✓ LISTS (Robust)
+  - Semantic <ul> and <li> for unordered lists
+  - Could use <ol> for ordered lists
+  - Proper nesting
+
+✓ RESPONSIVE & ACCESSIBLE
+  - Mobile-first design
+  - Works on all device sizes
+  - Touch targets ≥48px
+
+==============================================
+WCAG COMPLIANCE CHECKLIST
+==============================================
+
+Perceivable:
+✓ All images have alt text
+✓ Videos have captions (if present)
+✓ Text is readable (size, contrast, line-height)
+✓ Color isn't only way to convey info
+✓ Text can be resized
+
+Operable:
+✓ Keyboard accessible (Tab navigation)
+✓ Focus indicators visible
+✓ No keyboard traps
+✓ Skip links present
+✓ Touch targets ≥48px on mobile
+
+Understandable:
+✓ Headings create logical outline
+✓ Link text is meaningful
+✓ Forms clearly labeled
+✓ Error messages clear and specific
+✓ Consistent navigation
+
+Robust:
+✓ Valid HTML
+✓ Semantic elements used correctly
+✓ Form labels properly associated
+✓ ARIA used where needed
+✓ Works with screen readers
+
+==============================================
+ACCESSIBILITY FEATURES DEMONSTRATED
+==============================================
+
+1. Skip Link:
+   <a href="#main" class="skip-link">Skip to main content</a>
+   Visible on focus, hidden by default
+
+2. Proper Form Labels:
+   <label for="name">Name</label>
+   <input id="name" type="text">
+   Connects label to input
+
+3. Helper Text:
+   aria-describedby="email-hint"
+   Links field to additional explanation
+
+4. Visible Focus States:
+   input:focus {
+       outline: 2px solid #1abc9c;
+   }
+   Clear keyboard navigation
+
+5. ARIA Attributes:
+   aria-required="true" — tells screen readers field is required
+   aria-describedby="hint-id" — links to helper text
+
+6. Color Contrast:
+   Dark text (#2c3e50) on light backgrounds
+   Light text (white) on dark backgrounds
+   All meet 4.5:1 WCAG AA minimum
+
+7. Image Alt Text:
+   alt="A diverse group of people using 
+       different devices..."
+   Descriptive, not redundant
+
+==============================================
+COMMON FIXES FROM STARTER TO COMPLETED
+==============================================
+
+1. Added skip link at top of page
+2. Fixed color contrast (#f99 → #2c3e50 with proper background)
+3. Added alt text to image
+4. Associated all form labels with inputs using for/id
+5. Changed heading hierarchy (h4 → h3 after h2)
+6. Rewrote link text to be meaningful
+7. Wrapped common issues list in semantic <ul><li>
+8. Added visible focus states to all interactive elements
+9. Added ARIA attributes for form fields
+10. Added footer links with focus states
+
+==============================================
+TESTING THIS COMPLETED FILE
+==============================================
+
+1. Keyboard Testing:
+   - Press Tab to move through page
+   - Shift+Tab to move backward
+   - Verify focus visible on every interactive element
+   - Enter to activate buttons/links
+
+2. Color Contrast:
+   - Visit https://webaim.org/resources/contrastchecker/
+   - Check background/text color pairs
+   - Verify ≥4.5:1 ratio
+
+3. Lighthouse Audit:
+   - Right-click → Inspect → Lighthouse tab
+   - Run Accessibility audit
+   - Should score 90+
+
+4. axe DevTools:
+   - Install browser extension
+   - Scan for issues
+   - Should find 0 violations
+
+5. Screen Reader (Optional):
+   - Download NVDA (Windows) or use VoiceOver (Mac)
+   - Listen to page structure
+   - Verify images have alt text
+   - Confirm form labels read correctly
+
+==============================================
+WCAG QUICK REFERENCE (KEY POINTS)
+==============================================
+
+1.3.1 Info and Relationships (Level A)
+   Use semantic HTML and proper labels for forms
+   
+1.4.3 Contrast (Minimum) (Level AA)
+   ≥4.5:1 for normal text, ≥3:1 for large text
+   
+2.1.1 Keyboard (Level A)
+   All functionality available via keyboard
+   
+2.4.3 Focus Order (Level A)
+   Tab order is logical and makes sense
+   
+2.4.7 Focus Visible (Level AA)
+   Keyboard focus indicator is visible
+   
+3.2.3 Consistent Navigation (Level AA)
+   Navigation repeats in same order on all pages
+   
+3.3.2 Labels or Instructions (Level A)
+   Form inputs have associated labels
+   
+3.3.4 Error Prevention (Level AA)
+   Errors prevented or clearly indicated
+
+==============================================
+BEYOND WCAG AA
+==============================================
+
+To reach AAA compliance, consider:
+□ 7:1 color contrast (vs 4.5:1 for AA)
+□ Captions for all audio
+□ Full transcripts for videos
+□ Descriptive titles for every page
+□ Expanded alt text for complex images
+□ Plain language reading level
+□ Sign language video for important content
+
+But remember: AA is the standard to aim for. 
+AAA is excellent but not always practical.
+
+==============================================
+RESOURCES & NEXT STEPS
+==============================================
+
+1. Compare Starter vs Completed files
+2. Identify every accessibility fix
+3. Test with keyboard navigation (Tab key)
+4. Run Lighthouse audit (target 90+)
+5. Install axe DevTools and scan
+6. If possible, test with screen reader
+7. Make your own project accessible
+8. Share your knowledge with others!
+
+==============================================
+BONUS: ARIA (Accessible Rich Internet Applications)
+==============================================
+
+ARIA adds accessibility info to HTML when semantic elements aren't enough.
+
+Common ARIA attributes used in this file:
+- aria-required="true" — marks required fields
+- aria-describedby="id" — links to additional description
+- role="banner" — defines section purpose (for screen readers)
+- role="main" — defines main content area
+
+Learn more: https://www.w3.org/WAI/ARIA/apg/
+
+==============================================
+FINAL THOUGHTS
+==============================================
+
+Accessibility is not a feature to add at the end.
+It's a mindset and practice from day one.
+
+When you build for accessibility:
+• You serve ALL users better
+• You follow legal requirements (often)
+• You improve SEO
+• You create better UX for everyone
+• You show you care about inclusion
+
+Every person deserves to use the web.
+Make it accessible!
+
+Questions? Review the lecture guide or ask in class!
+-->
