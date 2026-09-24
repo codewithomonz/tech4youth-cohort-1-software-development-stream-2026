@@ -3,7 +3,7 @@
 **Searching For Remote Role**
 
 ## User-Story (who, what and why)
-- As a user, I want search for remote role and apply for the job
+- As a user, I want search for remote role and apply for the job.
 
 ## Acceptance Criteria (Context, Action and Expected Result)
 - Given I am on the job search page on linkend

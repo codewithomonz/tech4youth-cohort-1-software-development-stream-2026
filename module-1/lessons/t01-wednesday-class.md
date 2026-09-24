@@ -7,8 +7,8 @@
 
 | Date                         | Lesson | Topic                                             | Duration |
 | ---------------------------- | ------ | ------------------------------------------------- | -------- |
-| **Sep 18, 2026** (Wednesday) | **L1** | Software Roles, SDLC, and Agile Delivery          | 2 hours  |
-| **Sep 18, 2026** (Wednesday) | **L2** | Agile Frameworks & Scrum in Practice              | 2 hours  |
+| **Sep 18, 2026** (Wednesday) | **L1** | Software Roles, SDLC, and Agile Delivery.          | 2 hours  |
+| **Sep 18, 2026** (Wednesday) | **L2** | Agile Frameworks & Scrum in Practice.             | 2 hours  |
 | **Sep 18, 2026** (Wednesday) | **L3** | User Stories, Acceptance Criteria & Documentation | 2 hours  |
 
 ---

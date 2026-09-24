@@ -26,7 +26,7 @@ By the end of this topic, learners will be able to:
 - ✅ Apply CSS to structure and style web pages using modern layout techniques
 - ✅ Understand responsive design principles and mobile-first thinking
 - ✅ Evaluate and improve web accessibility using WCAG 2.1 Level AA standards
-- ✅ Recognize and prevent common accessibility barriers
+- ✅ Recognize and prevent common accessibility barriers.
 
 ---
 
