@@ -1,0 +1,23 @@
+"emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "javascriptreact": "javascriptreact",
+        "typescript": "typescriptreact",
+        "typescriptreact": "typescriptreact",
+        "php": "php",
+        "laravel": "laravel",
+    },
+
+
+ "editor.wordWrap": "on",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
